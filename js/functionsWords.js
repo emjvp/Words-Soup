@@ -1,9 +1,8 @@
 
 
-function addWords( word ) {
-    const wordArr = []; // se define que es un arreglo
+function addWords( word, wordArr ) {
 
-    if ( word.lenght > soupSize | word === ''){ 
+    if ( word.lenght > SOUPSIZE && wordArr.length === SOUPSIZE){ 
         
         return; 
     }
@@ -17,10 +16,15 @@ function addWords( word ) {
 }
 
 function listWords( wordArr, listHtml ) { // recibe el arreglo de las palabras y el elemento html que va a renderizar las palabras
-
+    let list = document.getElementById('wordList');
     let node;
     let textNode;
-
+    if(list.hasChildNodes())
+    {
+        while( list.childNodes.length >= 1){
+            list.removeChild(list.firstChild);
+        }
+    }
     
    wordArr.forEach( 
     element => {
@@ -37,23 +41,18 @@ function listWords( wordArr, listHtml ) { // recibe el arreglo de las palabras y
 
 
 
-function chargeWords(wordArr, tableSoupHtml) { /*wordArr, tableSoupHtml, size*/ 
+function chargeWords(wordsArr) { 
+        
+    let currWord = '';
+    
+    
+    
+
+              
         
     
-    let indx = 0;
-
-    let lettersMat = Mat();
-    let currWord = '';
-
-    wordArr.forEach( element => {
-        let col = Math.floor(Math.random() * SOUPSIZE);
-        let row = Math.floor(Math.random() * SOUPSIZE);
-        currWord = element.split('');        
-        fillLines(col, row, lettersMat, currWord);            
-        }
-    );
         
-
+    return lettersMat;
 }
 
 
