@@ -193,6 +193,8 @@ function fillLines( Words ){ // esto es para llenar la matriz de palabras
 
                 row = convertToPositives(row, col)[0];
                 col = convertToPositives(row, col)[1];
+                console.log(`row: ${row}`);
+                console.log(`col: ${col}`);
                 /*while(!lineHVIsValid(Words[cwIRow], Matriz, row, col, sense)){
                     row = Math.floor(Math.random() * Matriz.length);
                     col = Math.floor(Math.random() * Matriz.length);
@@ -202,28 +204,19 @@ function fillLines( Words ){ // esto es para llenar la matriz de palabras
                 }*/
 
                 for ( let cwICol = 0; cwICol < Words[cwIRow].length; cwICol++) 
-                {
-
-                    console.log(`row ${row}`);
-                    console.log(`col ${col}`);
-                    console.log(Matriz[row][col]);
-                    /*console.log(`row ${row}`);
-                    console.log(`col ${col}`);
-                    // console.log(`Matriz: ${Matriz}`);
-                    console.log(`cwIRow ${cwIRow}`);
-                    console.log(`cwICol ${cwICol}`);
-                    console.log(`Words[cwIRow][cwICol]: ${Words[cwIRow][cwICol]}`);
-                    
-                    Matriz[0][0] = Words[cwIRow][cwICol];*/
-                    
-                                       
-                    row++;   
+                {   
                 }
-
-               
             }      
-            
-            console.table(Matriz)
+            console.table(Matriz);
+            for (let j = 0; j < Matriz.length; j++) {
+                for (let i = 0; i < Matriz.length; i++) {
+                    
+                    console.log(Matriz[i][j]);
+                    
+                }
+                
+            }
+
         }
         
     /*        //console.table(Matriz);
