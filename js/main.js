@@ -6,8 +6,8 @@ const addBtn = document.getElementById('addBtn');
 const listHtml = document.getElementById('wordList');
 const soupTable = document.getElementById('soupTable');
 const generateSoupBtn = document.getElementById('generateSoupBtn');
-let wordsArr = ['sdfdsfsdf', 'dsdsldsdfeere'];
-let lettersMat = Mat();
+let wordsArr = ['hhdfsdg', 'll', 'sdfksdnfnk'];
+
 let add = false;
 let generateSoup = false;
 
@@ -15,10 +15,8 @@ let generateSoup = false;
 addBtn.addEventListener("click", () => {
 
     if (wordIn.value === '' && wordIn.value.length < SOUPSIZE){ return; }
-    wordArr = addWords(wordIn.value, wordArr);
-    
-    
-    listWords( wordArr, listHtml );
+    wordArr = addWords(wordIn.value, wordsArr);        
+    listWords( wordsArr, listHtml );
     wordIn.value = '';
     add = true;
 
@@ -27,18 +25,19 @@ addBtn.addEventListener("click", () => {
 generateSoupBtn.addEventListener("click", () => {
 
     
-    chargeWords(wordsArr);
     
+        
 
     if(add && !generateSoup) {
         generateSoupBtn.setAttribute('class', 'btn btn-warning mt-2');
-        drawSoup( soupTable, SOUPSIZE, Mat);
+        
         generateSoup = true;
     }
     
 
 });
 
+//drawSoup( soupTable, SOUPSIZE, chargeWords(wordsArr));
 chargeWords(wordsArr);
 
 
