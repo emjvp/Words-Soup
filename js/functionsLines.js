@@ -76,9 +76,14 @@ function convertToPositives(row, col) {
     }
     if(col < 0)
     {
-        col = col * -1;
+        col = col * -1;        
     }
    return [row, col];
+}
+function correctRange( row, col ){
+    if () {
+
+    }
 }
 function fillLines( Words ){ // esto es para llenar la matriz de palabras
     Matriz = Mat(SOUPSIZE);
@@ -129,8 +134,8 @@ function fillLines( Words ){ // esto es para llenar la matriz de palabras
                 for ( let cwICol = 0; cwICol < Words[cwIRow].length; cwICol++) 
                 {
 
-                    console.log(`row ${row}`);
-                    console.log(`col ${col}`);
+                    // console.log(`row ${row}`);
+                    // console.log(`col ${col}`);
                     // console.log(`Matriz: ${Matriz}`);
                     
                     
@@ -165,11 +170,11 @@ function fillLines( Words ){ // esto es para llenar la matriz de palabras
                 
                 for ( let cwICol = Words[cwIRow].length - 1; cwICol >= 0; cwICol--) 
                 {
-                    
+                    // console.log(`row: ${row}`);
+                    // console.log(`col: ${col}`);
                     Matriz[row][col] = Words[cwIRow][cwICol];
                     
-                    if(col - 1 >= 0){
-                        console.log(col);
+                    if(col - 1 >= 0){                        
                         col--;
                     }                   
                     
@@ -205,13 +210,23 @@ function fillLines( Words ){ // esto es para llenar la matriz de palabras
 
                 for ( let cwICol = 0; cwICol < Words[cwIRow].length; cwICol++) 
                 {   
+                    console.log(`row: ${row}`);
+                    console.log(`col: ${col}`);
+                    console.log(Matriz);
+                   
+                    console.log(`row: ${row}`);
+                    console.log(`col: ${col}`);
+                    console.log(Matriz[19][0]);
+                    
+                    
+                    row ++;
                 }
             }      
-            console.table(Matriz);
-            for (let j = 0; j < Matriz.length; j++) {
-                for (let i = 0; i < Matriz.length; i++) {
-                    
-                    console.log(Matriz[i][j]);
+            /*for (let col = 0; col < Matriz.length; col++) {
+                for (let row = 0; row < Matriz.length; row++) {
+                    console.log(`row: ${row}`);
+                    console.log(`col: ${col}`);
+                    console.log(Matriz[row][col]);
                     
                 }
                 
